@@ -109,17 +109,20 @@
 
 
 
-			<form id="myForm" method="GET" action="{% url 'payments' %}">
+				<form id="myForm" method="GET" action="{% url 'payments' %}">
 				<div class="col form-group">
     <h4><b>ENTER ORDER NUMNER: </b></h4><input type="text" name="field_name" placeholder="Enter Data" style="border: 1px solid #007BFF; padding: 5px;">
-		<h5>please wait for 30 sec.</h5>
 		</div>
 
-    <input type="submit"  value="Submit" style="background-color: #007BFF; color: #fff; padding: 10px 20px; border: none;">
+    <button onclick="showAlert()" class= "btn btn-primary"  type="submit"  value="Submit" style="background-color: #007BFF; color: #fff; padding: 10px 20px; border: none;">Submit</button>
 </form>
 <script>
         const form = document.getElementById('myForm');
         const submitBtn = document.getElementById('submitBtn');
+				function showAlert(){
+					var myTxt="Please confirm your order";
+					alert(myTxt);
+				}
 
         form.addEventListener('submit', function(event) {
             if (!form.hasAttribute('data-submitted')) {
